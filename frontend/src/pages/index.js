@@ -1,5 +1,13 @@
+import React from "react";
 import Layout from "@/components/Layout";
+import EmailList from "../components/EmailList";
 
 export default function Home() {
-  return <Layout></Layout>;
+  const [emails, setEmails] = React.useState([]);
+
+  return (
+    <Layout>
+      <EmailList emails={emails} />
+    </Layout>
+  );
 }
