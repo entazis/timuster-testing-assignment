@@ -1,6 +1,7 @@
 // ESM
 import Fastify from "fastify";
 import routes from "./src/routes/index.js";
+import cors from "@fastify/cors";
 
 /**
  * @type {import('fastify').FastifyInstance} Instance of Fastify
@@ -10,6 +11,7 @@ const fastify = Fastify({
 });
 
 fastify.register(routes);
+fastify.register(cors);
 
 fastify.listen({ port: process.env.PORT }, function (err, address) {
   if (err) {
