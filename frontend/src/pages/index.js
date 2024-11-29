@@ -58,6 +58,7 @@ export default function Home({ initEmails }) {
       });
 
       if (!response.ok) {
+        //TODO fix warning 'throw' of exception caught locally
         throw new Error("Network response was not ok");
       }
 
@@ -138,7 +139,7 @@ export default function Home({ initEmails }) {
   );
 }
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async () => {
   const res = await fetch(
     `${process.env.API_URL}/search?${new URLSearchParams({ term: "" }).toString()}`,
   );

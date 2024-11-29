@@ -17,7 +17,7 @@ const fastify = Fastify({
 fastify.register(routes);
 fastify.register(cors);
 
-fastify.listen({ port: process.env.PORT }, function (err, address) {
+fastify.listen({ port: process.env.PORT }, function (err) {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
