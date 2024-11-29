@@ -18,12 +18,28 @@ export default function Home() {
     },
     [emails],
   );
+  const onSearch = React.useCallback(
+    async (e) => {
+      const term = e.target.value;
+      console.log("searching ", term);
+      const res = await fetch(
+        `${process.env.API_URL}/search?${new URLSearchParams({ term }).toString()}`,
+      );
+      const emailResults = await res.json();
+      setEmails(emailResults);
+    },
+    [setEmails],
+  );
 
   return (
     <Layout>
       <Grid container wrap="nowrap" sx={{ overflow: "auto" }} spacing={8}>
         <Grid item>
-          <EmailList emails={emails} onClickEmail={onClickEmail} />
+          <EmailList
+            emails={emails}
+            onClickEmail={onClickEmail}
+            onSearch={onSearch}
+          />
         </Grid>
         <Grid item>
           <Content email={selectedEmail} />
