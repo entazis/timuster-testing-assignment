@@ -4,11 +4,8 @@ import EmailList from "../components/EmailList";
 import { Grid } from "@mui/material";
 import Content from "@/components/Content";
 
-export default function Home() {
-  const [emails, setEmails] = React.useState([
-    { id: "1", subject: "test-title-1" },
-    { id: "2", subject: "test-title-2" },
-  ]);
+export default function Home({ initEmails }) {
+  const [emails, setEmails] = React.useState(initEmails);
   const [selectedEmail, setSelectedEmail] = React.useState({});
 
   const onClickEmail = React.useCallback(
@@ -47,3 +44,11 @@ export default function Home() {
     </Layout>
   );
 }
+
+export const getStaticProps = async (context) => {
+  const res = await fetch(
+    `${process.env.API_URL}/search?${new URLSearchParams({ term: "" }).toString()}`,
+  );
+  const initEmails = await res.json();
+  return { props: { initEmails } };
+};
