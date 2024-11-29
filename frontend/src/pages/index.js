@@ -19,8 +19,7 @@ export default function Home() {
     [emails],
   );
   const onSearch = React.useCallback(
-    async (e) => {
-      const term = e.target.value;
+    async (term) => {
       console.log("searching ", term);
       const res = await fetch(
         `${process.env.API_URL}/search?${new URLSearchParams({ term }).toString()}`,
