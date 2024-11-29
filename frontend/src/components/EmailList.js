@@ -15,7 +15,6 @@ export default function EmailList({ emails, onClickEmail, onSearch }) {
     };
   };
 
-  //TODO list to and subject, body .substring(0, 50)
   return (
     <div>
       <TextField

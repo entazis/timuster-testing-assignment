@@ -5,6 +5,8 @@ import { Button, Fab, Grid, TextField } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import Content from "@/components/Content";
 
+//TODO update the style
+
 export default function Home({ initEmails }) {
   const [emails, setEmails] = React.useState(initEmails);
   const [selectedEmail, setSelectedEmail] = React.useState({});
