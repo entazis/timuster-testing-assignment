@@ -1,17 +1,13 @@
-import EmailIcon from "@mui/icons-material/Email";
-import Link from "next/link";
-import { AccountBox } from "@mui/icons-material";
+import Menu from "@/components/Menu";
+import { Grid } from "@mui/material";
 
 export default function Layout({ children }) {
   return (
-    <div className="sidebar">
-      <Link href="/">
-        <EmailIcon />
-      </Link>
-      <Link href="/leads">
-        <AccountBox />
-      </Link>
-      {children}
-    </div>
+    <Grid container wrap="nowrap" sx={{ overflow: "auto" }} spacing={8}>
+      <Grid item xs={1} md={2}>
+        <Menu />
+      </Grid>
+      <Grid item>{children}</Grid>
+    </Grid>
   );
 }
