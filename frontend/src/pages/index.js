@@ -6,18 +6,27 @@ import Content from "@/components/Content";
 
 export default function Home() {
   const [emails, setEmails] = React.useState([
-    { subject: "test-title-1" },
-    { subject: "test-title-2" },
+    { id: "1", subject: "test-title-1" },
+    { id: "2", subject: "test-title-2" },
   ]);
+  const [selectedEmail, setSelectedEmail] = React.useState({});
+
+  const onClickEmail = React.useCallback(
+    (id) => {
+      console.debug("selected email id", id);
+      setSelectedEmail(emails.find((email) => email.id === id));
+    },
+    [emails],
+  );
 
   return (
     <Layout>
       <Grid container wrap="nowrap" sx={{ overflow: "auto" }} spacing={8}>
         <Grid item>
-          <EmailList emails={emails} />
+          <EmailList emails={emails} onClickEmail={onClickEmail} />
         </Grid>
         <Grid item>
-          <Content email={emails[0]} />
+          <Content email={selectedEmail} />
         </Grid>
       </Grid>
     </Layout>
