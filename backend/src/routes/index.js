@@ -1,5 +1,8 @@
 import DB from "../db/index.js";
 
+//TODO add throttle to prevent abuse
+//TODO add fastify-swagger
+
 export default async function routes(fastify, options) {
   fastify.get("/ping", async (request, reply) => {
     return "pong\n";

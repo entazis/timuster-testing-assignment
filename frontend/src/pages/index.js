@@ -5,7 +5,8 @@ import { Button, Fab, Grid, TextField } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import Content from "@/components/Content";
 
-//TODO update the style
+//TODO fix styles
+//TODO update to create a nice looking app
 
 export default function Home({ initEmails }) {
   const [emails, setEmails] = React.useState(initEmails);

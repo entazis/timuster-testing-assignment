@@ -3,6 +3,10 @@ import Fastify from "fastify";
 import routes from "./src/routes/index.js";
 import cors from "@fastify/cors";
 
+//TODO add TypeScript support
+//TODO add dotenv
+//TODO create integration tests
+
 /**
  * @type {import('fastify').FastifyInstance} Instance of Fastify
  */

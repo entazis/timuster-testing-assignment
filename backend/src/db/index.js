@@ -12,6 +12,7 @@ class DB {
   static async addLead(data) {
     return db("leads").insert(data);
   }
+  //TODO create emails schema
   static async addEmail(data) {
     return db("emails").insert(data);
   }

@@ -1,6 +1,8 @@
 import { List, ListItem, TextField } from "@mui/material";
 import EmailItem from "@/components/EmailItem";
 
+//TODO add animation for opening/closing sidebar
+
 export default function EmailList({ emails, onClickEmail, onSearch }) {
   //TODO create useDebounce hook
   const debounce = (onChange) => {
@@ -14,6 +16,8 @@ export default function EmailList({ emails, onClickEmail, onSearch }) {
       }, 500);
     };
   };
+
+  //TODO cursor:pointer on hover for email list
 
   return (
     <div>

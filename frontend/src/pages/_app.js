@@ -1,6 +1,9 @@
 import "@/styles/globals.css";
 import Head from "next/head";
 
+//TODO add TypeScript support
+//TODO create tests
+
 export default function App({ Component, pageProps }) {
   return (
     <>
